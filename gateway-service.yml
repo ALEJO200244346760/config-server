@@ -27,6 +27,8 @@ gateway:
       uri: lb://product-service
       predicates:
         - Path=/products/**
+      filters:
+      - TokenRealy=
 
 server:
   port: 8084
