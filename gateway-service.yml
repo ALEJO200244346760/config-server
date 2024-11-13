@@ -16,6 +16,7 @@ spring:
 
 gateway:
  default-filters:
+  - TokenRealy=
   routes:
     - id: checkout-service
       uri: http://localhost:8081
@@ -28,8 +29,6 @@ gateway:
       uri: lb://product-service
       predicates:
         - Path=/products/**
-      filters:
-      - TokenRealy=
 
 server:
   port: 8084
